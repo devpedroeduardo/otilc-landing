@@ -8,7 +8,9 @@ const EXT = `target="_blank" rel="noopener"`;
 export function renderContacts() {
   const wa = (text) => whatsappLink(CONTACT.whatsapp, text);
   const ig = instagramLink(CONTACT.instagram);
-  const waitlist = wa("Olá! Quero entrar na lista de espera da loja OTILC e ser avisado(a) do lançamento e dos próximos drops.");
+  const waitlist = wa(
+    "Olá! Quero entrar na lista de espera da loja OTILC e ser avisado(a) do lançamento e dos próximos drops.",
+  );
 
   $("#waitlist-ctas").innerHTML =
     [

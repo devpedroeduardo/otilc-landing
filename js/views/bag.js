@@ -1,5 +1,13 @@
 import { CONTACT } from "../config.js";
-import { escapeHTML as esc, formatBRL, instagramLink, orderMessage, photoSrc, totalOf, whatsappLink } from "../lib/catalog.js";
+import {
+  escapeHTML as esc,
+  formatBRL,
+  instagramLink,
+  orderMessage,
+  photoSrc,
+  totalOf,
+  whatsappLink,
+} from "../lib/catalog.js";
 import { state, selectedProducts } from "../state.js";
 import { $, toast, track } from "../dom.js";
 import { toggleSelection } from "../actions.js";

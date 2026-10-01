@@ -104,7 +104,11 @@ async function sharePiece(no) {
   track("share", { item_id: no });
   if (navigator.share) {
     try {
-      await navigator.share({ title: `OTILC · ${p.name}`, text: `${p.name} (${p.brand}) por R$ ${formatBRL(p.price)} na pré-venda OTILC`, url });
+      await navigator.share({
+        title: `OTILC · ${p.name}`,
+        text: `${p.name} (${p.brand}) por R$ ${formatBRL(p.price)} na pré-venda OTILC`,
+        url,
+      });
       return;
     } catch (err) {
       if (err?.name === "AbortError") return;

@@ -63,7 +63,9 @@ export const totalOf = (items) => items.reduce((s, p) => s + p.price, 0);
 export function orderMessage(items, drop = "00") {
   return [
     `Olá! Vi a pré-venda da OTILC (Drop ${drop}) e quero reservar:`,
-    ...items.map((p) => `• Nº${p.no} ${p.name} (${p.brand}${p.size ? `, tam ${p.size}` : ""}): R$ ${formatBRL(p.price)}`),
+    ...items.map(
+      (p) => `• Nº${p.no} ${p.name} (${p.brand}${p.size ? `, tam ${p.size}` : ""}): R$ ${formatBRL(p.price)}`,
+    ),
     `Total: R$ ${formatBRL(totalOf(items))}`,
   ].join("\n");
 }
@@ -79,7 +81,9 @@ export function whatsappLink(phone, text = "") {
 
 /** @param {string} handle */
 export function instagramLink(handle) {
-  const h = String(handle || "").replace(/^@/, "").trim();
+  const h = String(handle || "")
+    .replace(/^@/, "")
+    .trim();
   return h ? `https://instagram.com/${h}` : null;
 }
 

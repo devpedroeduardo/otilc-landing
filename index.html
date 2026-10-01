@@ -1,212 +1,325 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>OTILC · Pré-venda Drop 00</title>
-<meta name="description" content="OTILC — Veja além. Pré-venda do Drop 00: peças únicas selecionadas, uma de cada.">
-<meta name="theme-color" content="#09090a">
-<!-- Ícones -->
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<!-- Prévia de link (WhatsApp, Instagram, Facebook, X).
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>OTILC · Pré-venda Drop 00</title>
+    <meta
+      name="description"
+      content="OTILC — Veja além. Pré-venda do Drop 00: peças únicas selecionadas, uma de cada."
+    />
+    <meta name="theme-color" content="#09090a" />
+    <!-- Ícones -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <!-- Prévia de link (WhatsApp, Instagram, Facebook, X).
      TROCAR "https://SEU-DOMINIO.com.br" pelo domínio real quando publicar: WhatsApp e Facebook só leem imagem com endereço completo. -->
-<link rel="canonical" href="https://SEU-DOMINIO.com.br/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="OTILC">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:url" content="https://SEU-DOMINIO.com.br/">
-<meta property="og:title" content="OTILC · Pré-venda Drop 00">
-<meta property="og:description" content="Veja além. Peças selecionadas, uma unidade de cada. Garanta a sua antes que alguém enxergue primeiro.">
-<meta property="og:image" content="https://SEU-DOMINIO.com.br/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Logo OTILC com o olho cromado e a frase Veja além.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OTILC · Pré-venda Drop 00">
-<meta name="twitter:description" content="Veja além. Peças selecionadas, uma unidade de cada.">
-<meta name="twitter:image" content="https://SEU-DOMINIO.com.br/assets/og.jpg">
-<!-- Métricas: cole aqui o snippet do Google Analytics 4 (gtag.js) e/ou do Meta Pixel.
+    <link rel="canonical" href="https://SEU-DOMINIO.com.br/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OTILC" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://SEU-DOMINIO.com.br/" />
+    <meta property="og:title" content="OTILC · Pré-venda Drop 00" />
+    <meta
+      property="og:description"
+      content="Veja além. Peças selecionadas, uma unidade de cada. Garanta a sua antes que alguém enxergue primeiro."
+    />
+    <meta property="og:image" content="https://SEU-DOMINIO.com.br/assets/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo OTILC com o olho cromado e a frase Veja além." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OTILC · Pré-venda Drop 00" />
+    <meta name="twitter:description" content="Veja além. Peças selecionadas, uma unidade de cada." />
+    <meta name="twitter:image" content="https://SEU-DOMINIO.com.br/assets/og.jpg" />
+    <!-- Métricas: cole aqui o snippet do Google Analytics 4 (gtag.js) e/ou do Meta Pixel.
      A página já dispara eventos (add_to_selection, view_item, whatsapp_click, share, waitlist_click) se gtag/fbq existirem. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&family=Space+Mono:wght@400;700&display=swap">
-<link rel="stylesheet" href="css/styles.css">
-<script type="module" src="js/main.js"></script>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&family=Space+Mono:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap">
+        <a class="brand" href="#inicio" aria-label="OTILC, início"
+          ><img src="assets/logo-sm.webp" alt="OTILC" width="360" height="105"
+        /></a>
+        <nav aria-label="Seções">
+          <a href="#pecas">Peças</a>
+          <a href="#manifesto">Manifesto</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
+        <button class="bag-btn" id="open-bag" type="button" aria-haspopup="dialog">
+          <span class="lbl">Seleção</span><span class="count" id="bag-count">0</span>
+        </button>
+      </div>
+    </header>
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#inicio" aria-label="OTILC, início"><img src="assets/logo-sm.webp" alt="OTILC" width="360" height="105"></a>
-    <nav aria-label="Seções">
-      <a href="#pecas">Peças</a>
-      <a href="#manifesto">Manifesto</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#duvidas">Dúvidas</a>
-    </nav>
-    <button class="bag-btn" id="open-bag" type="button" aria-haspopup="dialog"><span class="lbl">Seleção</span><span class="count" id="bag-count">0</span></button>
-  </div>
-</header>
-
-<main id="inicio">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-copy">
-        <div class="drop reveal"><span class="dot" aria-hidden="true"></span><span class="label">Pré-venda aberta · Drop 00</span></div>
-        <h1 class="reveal d1">Veja <em class="chrome-text">além.</em></h1>
-        <p class="lede reveal d2">Peças selecionadas, uma unidade de cada. O primeiro passo antes da loja. Escolha as suas e garanta antes que alguém enxergue primeiro.</p>
-        <div class="ctas reveal d3">
-          <a class="btn btn-solid" href="#pecas">Ver as peças <span class="arr" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="#manifesto">Ler o manifesto</a>
-        </div>
-        <div class="facts reveal d4">
-          <div><b id="fact-count">17</b><span>peças</span></div>
-          <div><b>1</b><span>de cada</span></div>
-          <div><b>00</b><span>drop</span></div>
-        </div>
-      </div>
-      <div class="eye-stage open" id="eye" aria-hidden="true">
-        <div class="halo"></div>
-        <div class="iris" id="iris"></div>
-        <div class="lid"><img src="assets/eye.webp" alt="" width="900" height="712"></div>
-        <img class="star" src="assets/star.webp" alt="">
-        <span class="tag">nº 00 ✦</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="ticker" aria-hidden="true">
-    <div class="row" id="ticker-row"></div>
-  </div>
-
-  <!-- PEÇAS -->
-  <section class="block" id="pecas">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>As <em>peças</em></h2>
-        <p class="side">Seminovas, escolhidas a dedo e fotografadas de verdade. Toque numa peça para ver de perto, ou no <b>+</b> para adicionar à sua seleção.</p>
-      </div>
-      <div class="tools">
-        <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria"></div>
-        <label class="sort"><span class="label">Ordenar</span>
-          <select id="sort" aria-label="Ordenar peças">
-            <option value="drop">Ordem do drop</option>
-            <option value="price-asc">Menor preço</option>
-            <option value="price-desc">Maior preço</option>
-            <option value="cond">Melhor condição</option>
-          </select>
-        </label>
-      </div>
-      <div class="grid" id="grid"></div>
-    </div>
-  </section>
-
-  <!-- MANIFESTO -->
-  <section class="block manifesto" id="manifesto">
-    <img class="ghost" src="assets/eye.webp" alt="" aria-hidden="true">
-    <div class="wrap">
-      <div class="left">
-        <span class="label">Manifesto</span>
-        <p class="quote">Enxergar nunca foi apenas <em class="chrome-text">abrir os olhos.</em></p>
-      </div>
-      <div class="body">
-        <p class="lead">OTILC nasceu de uma coincidência que talvez não seja coincidência, já que vivemos em um mundo onde a possibilidade é vasta, e a possibilidade de não existir coincidência existe.</p>
-        <p>É perceber a arte escondida no mundo: nas ruas, na arquitetura, na música e nas histórias de quem passa por nós todos os dias. É compreender que existem diferentes maneiras de interpretar o mesmo universo. Cada pessoa enxerga uma realidade através da própria experiência.</p>
-        <p>Mas enxergar também significa questionar, compreender e achar uma possibilidade para que a gente possa entender o que nos é imposto: os padrões que nos condicionam, a busca incessante por dinheiro e status, já que hoje isso parece a única medida de sucesso.</p>
-        <p class="callout">OTILC lhe convida a fazer parte de uma nova geração. Uma forma diferente de viver, mais consciente, mais livre e humana.</p>
-        <p>Por isso, nossa visão não é apenas estética. Ela é:</p>
-        <div class="triad"><span>Intelectual</span><span>Emocional</span><span>Espiritual</span></div>
-        <p>Cada pessoa é um universo completo, formado por corpo, mente, emoções, histórias e relações. Antes de enxergar diferenças de origem, cor, classe social ou religião, escolhemos enxergar aquilo que nos torna iguais: <em>nossa alma.</em></p>
-        <div class="closing">
-          <p class="big">Fazer parte da OTILC não é apenas ter uma peça. É carregar uma maneira diferente de observar o mundo.</p>
-          <ul>
-            <li>É desenvolver um olhar crítico sem perder a sensibilidade.</li>
-            <li>É buscar conhecimento sem perder a humildade.</li>
-            <li>É valorizar a estética sem abandonar a essência.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section class="block how" id="como-funciona">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Como <em>funciona</em></h2>
-        <p class="side">A pré-venda é direta, sem cadastro. Cada peça tem uma unidade só: quem chama primeiro, leva.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="n chrome-text">1</span><h3>Monte sua seleção</h3><p>Toque no + das peças que você quer. Ela fica salva neste aparelho.</p></div>
-        <div class="step"><span class="n chrome-text">2</span><h3>Abra sua seleção</h3><p>Confira as peças, os tamanhos e o total. A mensagem do pedido já vem pronta.</p></div>
-        <div class="step"><span class="n chrome-text">3</span><h3>Envie no WhatsApp</h3><p>Toque em “Enviar pelo WhatsApp”. A gente confirma a disponibilidade e combina pagamento e entrega.</p></div>
-      </div>
-      <div class="scale">
-        <div><span class="label">Condição das peças</span><h3>A régua <em>de 0 a 10</em></h3></div>
-        <div class="ruler">
-          <div class="ticks" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
-          <div class="legend">
-            <div><b>9 – 10</b><p>Praticamente nova. Sem marcas de uso aparentes.</p></div>
-            <div><b>7 – 8</b><p>Usada com cuidado. Sinais leves de uso.</p></div>
-            <div><b>5 – 6</b><p>Uso visível, com muita vida pela frente. Veja as fotos.</p></div>
+    <main id="inicio">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero-copy">
+            <div class="drop reveal">
+              <span class="dot" aria-hidden="true"></span><span class="label">Pré-venda aberta · Drop 00</span>
+            </div>
+            <h1 class="reveal d1">Veja <em class="chrome-text">além.</em></h1>
+            <p class="lede reveal d2">
+              Peças selecionadas, uma unidade de cada. O primeiro passo antes da loja. Escolha as suas e garanta antes
+              que alguém enxergue primeiro.
+            </p>
+            <div class="ctas reveal d3">
+              <a class="btn btn-solid" href="#pecas">Ver as peças <span class="arr" aria-hidden="true">→</span></a>
+              <a class="btn btn-ghost" href="#manifesto">Ler o manifesto</a>
+            </div>
+            <div class="facts reveal d4">
+              <div><b id="fact-count">17</b><span>peças</span></div>
+              <div><b>1</b><span>de cada</span></div>
+              <div><b>00</b><span>drop</span></div>
+            </div>
+          </div>
+          <div class="eye-stage open" id="eye" aria-hidden="true">
+            <div class="halo"></div>
+            <div class="iris" id="iris"></div>
+            <div class="lid"><img src="assets/eye.webp" alt="" width="900" height="712" /></div>
+            <img class="star" src="assets/star.webp" alt="" />
+            <span class="tag">nº 00 ✦</span>
           </div>
         </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="row" id="ticker-row"></div>
       </div>
+
+      <!-- PEÇAS -->
+      <section class="block" id="pecas">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>As <em>peças</em></h2>
+            <p class="side">
+              Seminovas, escolhidas a dedo e fotografadas de verdade. Toque numa peça para ver de perto, ou no
+              <b>+</b> para adicionar à sua seleção.
+            </p>
+          </div>
+          <div class="tools">
+            <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria"></div>
+            <label class="sort"
+              ><span class="label">Ordenar</span>
+              <select id="sort" aria-label="Ordenar peças">
+                <option value="drop">Ordem do drop</option>
+                <option value="price-asc">Menor preço</option>
+                <option value="price-desc">Maior preço</option>
+                <option value="cond">Melhor condição</option>
+              </select>
+            </label>
+          </div>
+          <div class="grid" id="grid"></div>
+        </div>
+      </section>
+
+      <!-- MANIFESTO -->
+      <section class="block manifesto" id="manifesto">
+        <img class="ghost" src="assets/eye.webp" alt="" aria-hidden="true" />
+        <div class="wrap">
+          <div class="left">
+            <span class="label">Manifesto</span>
+            <p class="quote">Enxergar nunca foi apenas <em class="chrome-text">abrir os olhos.</em></p>
+          </div>
+          <div class="body">
+            <p class="lead">
+              OTILC nasceu de uma coincidência que talvez não seja coincidência, já que vivemos em um mundo onde a
+              possibilidade é vasta, e a possibilidade de não existir coincidência existe.
+            </p>
+            <p>
+              É perceber a arte escondida no mundo: nas ruas, na arquitetura, na música e nas histórias de quem passa
+              por nós todos os dias. É compreender que existem diferentes maneiras de interpretar o mesmo universo. Cada
+              pessoa enxerga uma realidade através da própria experiência.
+            </p>
+            <p>
+              Mas enxergar também significa questionar, compreender e achar uma possibilidade para que a gente possa
+              entender o que nos é imposto: os padrões que nos condicionam, a busca incessante por dinheiro e status, já
+              que hoje isso parece a única medida de sucesso.
+            </p>
+            <p class="callout">
+              OTILC lhe convida a fazer parte de uma nova geração. Uma forma diferente de viver, mais consciente, mais
+              livre e humana.
+            </p>
+            <p>Por isso, nossa visão não é apenas estética. Ela é:</p>
+            <div class="triad"><span>Intelectual</span><span>Emocional</span><span>Espiritual</span></div>
+            <p>
+              Cada pessoa é um universo completo, formado por corpo, mente, emoções, histórias e relações. Antes de
+              enxergar diferenças de origem, cor, classe social ou religião, escolhemos enxergar aquilo que nos torna
+              iguais: <em>nossa alma.</em>
+            </p>
+            <div class="closing">
+              <p class="big">
+                Fazer parte da OTILC não é apenas ter uma peça. É carregar uma maneira diferente de observar o mundo.
+              </p>
+              <ul>
+                <li>É desenvolver um olhar crítico sem perder a sensibilidade.</li>
+                <li>É buscar conhecimento sem perder a humildade.</li>
+                <li>É valorizar a estética sem abandonar a essência.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section class="block how" id="como-funciona">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Como <em>funciona</em></h2>
+            <p class="side">
+              A pré-venda é direta, sem cadastro. Cada peça tem uma unidade só: quem chama primeiro, leva.
+            </p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <span class="n chrome-text">1</span>
+              <h3>Monte sua seleção</h3>
+              <p>Toque no + das peças que você quer. Ela fica salva neste aparelho.</p>
+            </div>
+            <div class="step">
+              <span class="n chrome-text">2</span>
+              <h3>Abra sua seleção</h3>
+              <p>Confira as peças, os tamanhos e o total. A mensagem do pedido já vem pronta.</p>
+            </div>
+            <div class="step">
+              <span class="n chrome-text">3</span>
+              <h3>Envie no WhatsApp</h3>
+              <p>Toque em “Enviar pelo WhatsApp”. A gente confirma a disponibilidade e combina pagamento e entrega.</p>
+            </div>
+          </div>
+          <div class="scale">
+            <div>
+              <span class="label">Condição das peças</span>
+              <h3>A régua <em>de 0 a 10</em></h3>
+            </div>
+            <div class="ruler">
+              <div class="ticks" aria-hidden="true">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span
+                ><span>7</span><span>8</span><span>9</span><span>10</span>
+              </div>
+              <div class="legend">
+                <div>
+                  <b>9 – 10</b>
+                  <p>Praticamente nova. Sem marcas de uso aparentes.</p>
+                </div>
+                <div>
+                  <b>7 – 8</b>
+                  <p>Usada com cuidado. Sinais leves de uso.</p>
+                </div>
+                <div>
+                  <b>5 – 6</b>
+                  <p>Uso visível, com muita vida pela frente. Veja as fotos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DÚVIDAS — EDITAR: confirme as respostas com a política real da loja -->
+      <section class="block faq" id="duvidas">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Dúvidas <em>comuns</em></h2>
+            <p class="side">
+              O que mais perguntam antes de fechar uma peça. Não achou sua resposta?
+              <a href="#" data-wa="Olá! Tenho uma dúvida sobre a pré-venda da OTILC:">Chama a gente</a>.
+            </p>
+          </div>
+          <div class="list">
+            <details>
+              <summary>Como eu compro?</summary>
+              <p>
+                Monte sua seleção com o + das peças, abra a seleção e toque em “Enviar pelo WhatsApp”. A mensagem já vai
+                com as peças, tamanhos e total. A gente responde confirmando a disponibilidade.
+              </p>
+            </details>
+            <details>
+              <summary>Quais as formas de pagamento?</summary>
+              <p>
+                Pagamento é combinado direto com a gente no WhatsApp, depois que a disponibilidade da peça é confirmada.
+              </p>
+            </details>
+            <details>
+              <summary>Vocês entregam? Como funciona o frete?</summary>
+              <p>
+                Entrega e retirada são combinadas no WhatsApp. Informe sua cidade/CEP na conversa para calcularmos o
+                envio.
+              </p>
+            </details>
+            <details>
+              <summary>A peça fica reservada quando eu mando a mensagem?</summary>
+              <p>
+                A peça é sua quando a gente confirma a disponibilidade na conversa. Como existe só uma unidade de cada,
+                quem chama primeiro tem a preferência.
+              </p>
+            </details>
+            <details>
+              <summary>As fotos são das peças reais?</summary>
+              <p>
+                Sim. Todas as fotos são das próprias peças à venda, sem imagem de catálogo. Quer ver outro ângulo ou um
+                detalhe? É só pedir.
+              </p>
+            </details>
+            <details>
+              <summary>O que significa a nota de condição?</summary>
+              <p>
+                É a nossa <a href="#como-funciona">régua de 0 a 10</a>: 9–10 praticamente nova, 7–8 usada com cuidado,
+                5–6 uso visível. Bonés estão sem nota.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- FECHAMENTO -->
+      <section class="outro">
+        <div class="wrap">
+          <img class="logo-big" src="assets/logo.webp" alt="OTILC" width="1206" height="353" />
+          <p class="line">Veja <em class="chrome-text">além.</em></p>
+          <p class="sub">Quando uma peça sai, ela não volta. A pré-venda é agora.</p>
+          <a class="btn btn-solid" href="#pecas">Escolher minhas peças <span class="arr" aria-hidden="true">→</span></a>
+          <div class="waitlist" id="lista">
+            <span class="label">Lista de espera</span>
+            <h2>A loja completa <em>está chegando</em></h2>
+            <p>
+              Entre na lista e seja avisado antes de todo mundo quando o site da OTILC abrir e quando sair o próximo
+              drop.
+            </p>
+            <div class="ctas" id="waitlist-ctas"></div>
+          </div>
+          <div class="legal">
+            <span class="label">© 2026 OTILC</span><span class="contacts label" id="contacts"></span
+            ><span class="label">Pré-venda · Drop 00 · Peças seminovas, fotos reais</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- painel de detalhe -->
+    <div id="detail-layer" hidden>
+      <div class="scrim" data-close></div>
+      <div class="sheet detail" role="dialog" aria-modal="true" aria-labelledby="d-title" id="detail"></div>
     </div>
-  </section>
 
-  <!-- DÚVIDAS — EDITAR: confirme as respostas com a política real da loja -->
-  <section class="block faq" id="duvidas">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Dúvidas <em>comuns</em></h2>
-        <p class="side">O que mais perguntam antes de fechar uma peça. Não achou sua resposta? <a href="#" data-wa="Olá! Tenho uma dúvida sobre a pré-venda da OTILC:">Chama a gente</a>.</p>
-      </div>
-      <div class="list">
-        <details><summary>Como eu compro?</summary><p>Monte sua seleção com o + das peças, abra a seleção e toque em “Enviar pelo WhatsApp”. A mensagem já vai com as peças, tamanhos e total. A gente responde confirmando a disponibilidade.</p></details>
-        <details><summary>Quais as formas de pagamento?</summary><p>Pagamento é combinado direto com a gente no WhatsApp, depois que a disponibilidade da peça é confirmada.</p></details>
-        <details><summary>Vocês entregam? Como funciona o frete?</summary><p>Entrega e retirada são combinadas no WhatsApp. Informe sua cidade/CEP na conversa para calcularmos o envio.</p></details>
-        <details><summary>A peça fica reservada quando eu mando a mensagem?</summary><p>A peça é sua quando a gente confirma a disponibilidade na conversa. Como existe só uma unidade de cada, quem chama primeiro tem a preferência.</p></details>
-        <details><summary>As fotos são das peças reais?</summary><p>Sim. Todas as fotos são das próprias peças à venda, sem imagem de catálogo. Quer ver outro ângulo ou um detalhe? É só pedir.</p></details>
-        <details><summary>O que significa a nota de condição?</summary><p>É a nossa <a href="#como-funciona">régua de 0 a 10</a>: 9–10 praticamente nova, 7–8 usada com cuidado, 5–6 uso visível. Bonés estão sem nota.</p></details>
-      </div>
+    <!-- painel da seleção -->
+    <div id="bag-layer" hidden>
+      <div class="scrim" data-close></div>
+      <aside class="sheet bag" role="dialog" aria-modal="true" aria-labelledby="bag-title" id="bag"></aside>
     </div>
-  </section>
 
-  <!-- FECHAMENTO -->
-  <section class="outro">
-    <div class="wrap">
-      <img class="logo-big" src="assets/logo.webp" alt="OTILC" width="1206" height="353">
-      <p class="line">Veja <em class="chrome-text">além.</em></p>
-      <p class="sub">Quando uma peça sai, ela não volta. A pré-venda é agora.</p>
-      <a class="btn btn-solid" href="#pecas">Escolher minhas peças <span class="arr" aria-hidden="true">→</span></a>
-      <div class="waitlist" id="lista">
-        <span class="label">Lista de espera</span>
-        <h2>A loja completa <em>está chegando</em></h2>
-        <p>Entre na lista e seja avisado antes de todo mundo quando o site da OTILC abrir e quando sair o próximo drop.</p>
-        <div class="ctas" id="waitlist-ctas"></div>
-      </div>
-      <div class="legal"><span class="label">© 2026 OTILC</span><span class="contacts label" id="contacts"></span><span class="label">Pré-venda · Drop 00 · Peças seminovas, fotos reais</span></div>
-    </div>
-  </section>
-</main>
-
-<!-- painel de detalhe -->
-<div id="detail-layer" hidden>
-  <div class="scrim" data-close></div>
-  <div class="sheet detail" role="dialog" aria-modal="true" aria-labelledby="d-title" id="detail"></div>
-</div>
-
-<!-- painel da seleção -->
-<div id="bag-layer" hidden>
-  <div class="scrim" data-close></div>
-  <aside class="sheet bag" role="dialog" aria-modal="true" aria-labelledby="bag-title" id="bag"></aside>
-</div>
-
-<div id="toast" class="toast" role="status" hidden></div>
-
-</body>
+    <div id="toast" class="toast" role="status" hidden></div>
+  </body>
 </html>
