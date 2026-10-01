@@ -1,6 +1,6 @@
 # OTILC: vitrine da pré-venda (Drop 00)
 
-[![CI](https://github.com/pedroedu77/otilc-landing/actions/workflows/ci.yml/badge.svg)](https://github.com/pedroedu77/otilc-landing/actions/workflows/ci.yml)
+[![CI](https://github.com/devpedroeduardo/otilc-landing/actions/workflows/ci.yml/badge.svg)](https://github.com/devpedroeduardo/otilc-landing/actions/workflows/ci.yml)
 ![Lighthouse](https://img.shields.io/badge/Lighthouse-98--100-0cce6b)
 ![WCAG 2.1 AA](https://img.shields.io/badge/axe-WCAG%202.1%20AA-0a7cff)
 ![Sem build](https://img.shields.io/badge/build-nenhum-555)
@@ -8,7 +8,7 @@
 Vitrine de pré-venda da **OTILC**, marca de roupas que está nascendo. São peças seminovas, uma unidade de cada, e o pedido é fechado pelo WhatsApp.
 Este é o primeiro passo antes da loja completa da marca, e a base visual dela.
 
-**[Ver o site no ar →](https://pedroedu77.github.io/otilc-landing/)**
+**[Ver o site no ar →](https://devpedroeduardo.github.io/otilc-landing/)**
 
 ![Vitrine no desktop](docs/desktop-pecas.webp)
 

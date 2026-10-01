@@ -1178,6 +1178,10 @@ section.block {
   text-align: left;
 }
 
+.legal .credit {
+  gap: 6px;
+}
+
 /* ---------- painéis (detalhe e seleção) ---------- */
 .scrim {
   position: fixed;

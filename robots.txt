@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pedroedu77.github.io/otilc-landing/sitemap.xml
+Sitemap: https://devpedroeduardo.github.io/otilc-landing/sitemap.xml
