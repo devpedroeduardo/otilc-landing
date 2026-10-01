@@ -33,15 +33,17 @@
     <meta name="twitter:title" content="OTILC · Pré-venda Drop 00" />
     <meta name="twitter:description" content="Veja além. Peças selecionadas, uma unidade de cada." />
     <meta name="twitter:image" content="https://SEU-DOMINIO.com.br/assets/og.jpg" />
-    <!-- Métricas: cole aqui o snippet do Google Analytics 4 (gtag.js) e/ou do Meta Pixel.
-     A página já dispara eventos (add_to_selection, view_item, whatsapp_click, share, waitlist_click) se gtag/fbq existirem. -->
+    <!-- Métricas (GA4 / Meta Pixel): configure os IDs em js/config.js. Só carregam após o consentimento (LGPD). -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Archivo só nas larguras/pesos usados (títulos condensados, 700–900) para baixar menos -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,700..900&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&family=Space+Mono:wght@400;700&display=swap"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preload" href="data/products.json" as="fetch" type="application/json" crossorigin />
+    <link rel="modulepreload" href="js/lib/catalog.js" />
     <script type="module" src="js/main.js"></script>
   </head>
   <body>
@@ -88,8 +90,8 @@
           <div class="eye-stage open" id="eye" aria-hidden="true">
             <div class="halo"></div>
             <div class="iris" id="iris"></div>
-            <div class="lid"><img src="assets/eye.webp" alt="" width="900" height="712" /></div>
-            <img class="star" src="assets/star.webp" alt="" />
+            <div class="lid"><img src="assets/eye.webp" alt="" width="900" height="712" fetchpriority="high" /></div>
+            <img class="star" src="assets/star.webp" alt="" width="200" height="322" />
             <span class="tag">nº 00 ✦</span>
           </div>
         </div>
@@ -127,7 +129,16 @@
 
       <!-- MANIFESTO -->
       <section class="block manifesto" id="manifesto">
-        <img class="ghost" src="assets/eye.webp" alt="" aria-hidden="true" />
+        <img
+          class="ghost"
+          src="assets/eye.webp"
+          alt=""
+          aria-hidden="true"
+          width="900"
+          height="712"
+          loading="lazy"
+          decoding="async"
+        />
         <div class="wrap">
           <div class="left">
             <span class="label">Manifesto</span>
@@ -287,7 +298,15 @@
       <!-- FECHAMENTO -->
       <section class="outro">
         <div class="wrap">
-          <img class="logo-big" src="assets/logo.webp" alt="OTILC" width="1206" height="353" />
+          <img
+            class="logo-big"
+            src="assets/logo.webp"
+            alt="OTILC"
+            width="1206"
+            height="353"
+            loading="lazy"
+            decoding="async"
+          />
           <p class="line">Veja <em class="chrome-text">além.</em></p>
           <p class="sub">Quando uma peça sai, ela não volta. A pré-venda é agora.</p>
           <a class="btn btn-solid" href="#pecas">Escolher minhas peças <span class="arr" aria-hidden="true">→</span></a>

@@ -16,11 +16,20 @@ export const isAvailable = (p) => !p.status;
 /** @param {Product} p */
 export const statusText = (p) => STATUS_TXT[p.status] || p.status || "";
 
-/** @param {string} name */
-export const photoSrc = (name) => `assets/img/${name}.jpg`;
+/** Versões geradas por scripts/optimize-images.js. */
+export const PHOTO_WIDTHS = [400, 800];
 
-/** Foto principal seguida das extras. @param {Product} p */
-export const photosOf = (p) => [p.img, ...(p.imgs || [])].map(photoSrc);
+/** @param {string} name @param {number} [w] */
+export const photoSrc = (name, w = 800) => `assets/img/w/${name}-${w}.webp`;
+
+/** @param {string} name */
+export const photoSrcset = (name) => PHOTO_WIDTHS.map((w) => `${photoSrc(name, w)} ${w}w`).join(", ");
+
+/** Foto original em JPG (dados estruturados e compartilhamento). @param {string} name */
+export const photoOriginal = (name) => `assets/img/${name}.jpg`;
+
+/** Nomes das fotos: principal seguida das extras. @param {Product} p */
+export const photosOf = (p) => [p.img, ...(p.imgs || [])];
 
 /** @param {number} n */
 export const formatBRL = (n) => n.toLocaleString("pt-BR");

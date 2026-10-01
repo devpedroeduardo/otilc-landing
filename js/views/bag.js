@@ -29,7 +29,7 @@ export function renderBag() {
             .map(
               (p) => `
       <div class="item">
-        <img src="${photoSrc(p.img)}" alt="" width="64" height="80">
+        <img src="${photoSrc(p.img, 400)}" alt="" width="64" height="80">
         <div><span class="label">Nº${p.no} · ${esc(p.brand)}</span><h4>${esc(p.name)}</h4><div class="p">R$ ${formatBRL(p.price)}${p.size ? ` · TAM ${esc(p.size)}` : ""}</div></div>
         <button type="button" data-toggle="${p.no}">Remover</button>
       </div>`,

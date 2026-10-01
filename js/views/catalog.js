@@ -1,4 +1,12 @@
-import { escapeHTML as esc, formatBRL, isAvailable, photosOf, statusText } from "../lib/catalog.js";
+import {
+  escapeHTML as esc,
+  formatBRL,
+  isAvailable,
+  photoSrc,
+  photoSrcset,
+  photosOf,
+  statusText,
+} from "../lib/catalog.js";
 import { state, emit } from "../state.js";
 import { $ } from "../dom.js";
 import { toggleSelection } from "../actions.js";
@@ -23,11 +31,16 @@ function cardHTML(p, idx, showFeature) {
   const on = state.selection.has(p.no);
   const free = isAvailable(p);
   const extra = photosOf(p).length - 1;
-  const classes = ["card", p.feature && showFeature && "feature", !free && "out"].filter(Boolean).join(" ");
+  const big = p.feature && showFeature;
+  const classes = ["card", big && "feature", !free && "out"].filter(Boolean).join(" ");
+  // largura real do card em cada faixa do layout (4, 3 ou 2 colunas; destaque ocupa 2)
+  const sizes = big
+    ? "(max-width: 860px) 100vw, (max-width: 1100px) 66vw, 640px"
+    : "(max-width: 860px) 50vw, (max-width: 1100px) 33vw, 320px";
   return `<article class="${classes}" data-no="${p.no}">
     <div class="media">
       <button class="shot" type="button" data-open="${p.no}" aria-label="Ver ${esc(p.name)}${free ? "" : `, ${esc(statusText(p))}`}">
-        <img src="${photosOf(p)[0]}" alt="${esc(p.name)} — ${esc(p.brand)}" width="900" height="1125" loading="${idx < 4 ? "eager" : "lazy"}" decoding="async">
+        <img src="${photoSrc(p.img)}" srcset="${photoSrcset(p.img)}" sizes="${sizes}" alt="${esc(p.name)} — ${esc(p.brand)}" width="800" height="1000" loading="${idx < 4 ? "eager" : "lazy"}" decoding="async">
         <span class="pill no">Nº${p.no}</span>
         ${p.size ? `<span class="pill size">TAM ${esc(p.size)}</span>` : ""}
         ${free ? "" : `<span class="pill status${p.status === "reservado" ? " res" : ""}">${esc(statusText(p))}</span>`}

@@ -45,7 +45,7 @@ export function startEye() {
 
 /** Faixa corrida abaixo do hero. @param {number} count @param {string} drop */
 export function renderTicker(count, drop) {
-  const star = `<img src="assets/star.webp" alt="" width="18" height="18">`;
+  const star = `<img src="assets/star.webp" alt="" width="200" height="322">`;
   const chunk = [`Pré-venda <i>aberta</i>`, `Drop ${drop}`, `Uma de cada`, `Veja <i>além</i>`, `${count} peças`]
     .map((t) => `<span>${t} ${star}</span>`)
     .join("");

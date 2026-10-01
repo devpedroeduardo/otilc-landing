@@ -4,6 +4,7 @@ import {
   escapeHTML as esc,
   formatBRL,
   isAvailable,
+  photoSrc,
   photosOf,
   pieceFromHash,
   statusText,
@@ -35,13 +36,13 @@ export function renderDetail(no) {
   $("#detail").innerHTML = `
     <button class="x" type="button" data-close aria-label="Fechar">✕</button>
     <div class="pic">
-      <div class="main"><img id="d-photo" src="${photos[0]}" alt="${alt}, foto 1 de ${photos.length}"></div>
+      <div class="main"><img id="d-photo" src="${photoSrc(photos[0])}" alt="${alt}, foto 1 de ${photos.length}"></div>
       ${
         photos.length > 1
           ? `<div class="thumbs" role="group" aria-label="Fotos da peça">${photos
               .map(
-                (src, k) =>
-                  `<button type="button" data-photo="${k}" aria-label="Foto ${k + 1} de ${photos.length}" aria-current="${k === 0}"><img src="${src}" alt="" width="56" height="70" loading="lazy"></button>`,
+                (name, k) =>
+                  `<button type="button" data-photo="${k}" aria-label="Foto ${k + 1} de ${photos.length}" aria-current="${k === 0}"><img src="${photoSrc(name, 400)}" alt="" width="56" height="70" loading="lazy"></button>`,
               )
               .join("")}</div>`
           : ""
@@ -127,7 +128,7 @@ function showPhoto(btn) {
   const photos = photosOf(findProduct(state.currentNo));
   const k = Number(btn.dataset.photo);
   const img = $("#d-photo");
-  img.src = photos[k];
+  img.src = photoSrc(photos[k]);
   img.alt = img.alt.replace(/foto \d+ de/, `foto ${k + 1} de`);
   $("#detail")
     .querySelectorAll("[data-photo]")

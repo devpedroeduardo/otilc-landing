@@ -2,7 +2,7 @@
   "name": "otilc-landing",
   "version": "1.0.0",
   "private": true,
-  "description": "Vitrine da pré-venda OTILC (Drop 00): site estático, sem build, em HTML, CSS e JavaScript modular.",
+  "description": "Vitrine da prÃ©-venda OTILC (Drop 00): site estÃ¡tico, sem build, em HTML, CSS e JavaScript modular.",
   "type": "module",
   "license": "SEE LICENSE IN LICENSE",
   "engines": {
@@ -10,6 +10,7 @@
   },
   "scripts": {
     "dev": "serve . -l 8080",
+    "images": "node scripts/optimize-images.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -24,6 +25,7 @@
     "eslint": "^10.11.0",
     "globals": "^17.13.0",
     "prettier": "^3.9.9",
-    "serve": "^14.2.6"
+    "serve": "^14.2.6",
+    "sharp": "^0.35.5"
   }
 }
