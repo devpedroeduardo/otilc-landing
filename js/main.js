@@ -8,6 +8,8 @@ import { bindDetail, renderDetail, syncWithHash } from "./views/detail.js";
 import { bindDialogs, isBagOpen, isDetailOpen } from "./views/dialogs.js";
 import { bindContacts, renderContacts } from "./views/contacts.js";
 import { renderTicker, startEye } from "./effects.js";
+import { initConsent } from "./consent.js";
+import { injectStructuredData } from "./seo.js";
 
 /** Redesenha o que depende do estado sempre que algo muda. */
 subscribe((reason) => {
@@ -31,6 +33,7 @@ async function loadData() {
 
 async function boot() {
   startEye();
+  initConsent();
   bindDialogs();
   bindCatalog();
   bindBag();
@@ -55,6 +58,7 @@ async function boot() {
   if (state.categories.some((c) => c.id === hash)) state.filter = hash;
   renderChips();
   renderGrid();
+  injectStructuredData();
   document.documentElement.dataset.ready = "true";
 
   if (state.filter !== "todas" || pieceFromHash(location.hash)) $("#pecas").scrollIntoView();

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Página não encontrada · OTILC</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#09090a" />
+    <script>
+      // A 404 é servida em qualquer URL inexistente, então os caminhos relativos precisam de uma base fixa.
+      // Em domínio próprio a base é "/"; no GitHub Pages de projeto (usuario.github.io/repo/) é "/repo/".
+      (function () {
+        var repo = location.hostname.endsWith("github.io") ? location.pathname.split("/")[1] : "";
+        var base = document.createElement("base");
+        base.href = "/" + (repo ? repo + "/" : "");
+        document.head.prepend(base);
+      })();
+    </script>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,700..900&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="wrap lost">
+        <img src="assets/eye.webp" alt="" width="900" height="712" />
+        <span class="label">Erro 404</span>
+        <h1>Nem o olho <em>achou.</em></h1>
+        <p>Essa página não existe ou a peça já saiu. Volte para a vitrine e veja o que ainda está disponível.</p>
+        <a class="btn btn-solid" href="./">Ver as peças <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </main>
+  </body>
+</html>

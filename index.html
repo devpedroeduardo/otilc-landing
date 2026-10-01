@@ -42,6 +42,19 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,700..900&family=Instrument+Serif:ital@0;1&family=Reenie+Beanie&family=Space+Mono:wght@400;700&display=swap"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "OTILC",
+        "slogan": "Veja além.",
+        "description": "Peças seminovas selecionadas, uma unidade de cada.",
+        "url": "https://SEU-DOMINIO.com.br/",
+        "logo": "https://SEU-DOMINIO.com.br/assets/logo.webp",
+        "image": "https://SEU-DOMINIO.com.br/assets/og.jpg",
+        "currenciesAccepted": "BRL"
+      }
+    </script>
     <link rel="preload" href="data/products.json" as="fetch" type="application/json" crossorigin />
     <link rel="modulepreload" href="js/lib/catalog.js" />
     <script type="module" src="js/main.js"></script>
@@ -321,6 +334,8 @@
           </div>
           <div class="legal">
             <span class="label">© 2026 OTILC</span><span class="contacts label" id="contacts"></span
+            ><span class="contacts label"
+              ><a href="privacidade.html">Privacidade</a><a href="#" data-open-consent hidden>Cookies</a></span
             ><span class="label">Pré-venda · Drop 00 · Peças seminovas, fotos reais</span>
           </div>
         </div>
@@ -340,5 +355,17 @@
     </div>
 
     <div id="toast" class="toast" role="status" hidden></div>
+
+    <!-- aviso de cookies: só aparece se houver métricas configuradas em js/config.js -->
+    <section id="consent" class="consent" aria-label="Aviso de cookies" hidden>
+      <p>
+        Usamos cookies de métricas para entender como a vitrine é usada. Nada é coletado sem sua permissão.
+        <a href="privacidade.html">Saiba mais</a>.
+      </p>
+      <div class="consent-actions">
+        <button class="btn btn-ghost" type="button" data-consent="no">Recusar</button>
+        <button class="btn btn-solid" type="button" data-consent="yes">Aceitar</button>
+      </div>
+    </section>
   </body>
 </html>
