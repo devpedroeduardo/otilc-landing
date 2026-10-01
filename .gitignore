@@ -17,3 +17,6 @@ desktop.ini
 # variáveis locais
 .env
 .env.*
+
+# metadados do Windows ao copiar arquivos para o WSL
+*:Zone.Identifier

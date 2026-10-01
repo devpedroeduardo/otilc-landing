@@ -2,7 +2,7 @@
   "name": "otilc-landing",
   "version": "1.0.0",
   "private": true,
-  "description": "Vitrine da prÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©-venda OTILC (Drop 00): site estÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡tico, sem build, em HTML, CSS e JavaScript modular.",
+  "description": "Vitrine da pré-venda OTILC (Drop 00): site estático, sem build, em HTML, CSS e JavaScript modular.",
   "type": "module",
   "license": "SEE LICENSE IN LICENSE",
   "engines": {
