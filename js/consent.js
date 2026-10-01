@@ -29,7 +29,8 @@ const addScript = (src) => {
 
 let loaded = false;
 function loadAnalytics() {
-  if (loaded) return;
+  if (ANALYTICS.ga4) window[`ga-disable-${ANALYTICS.ga4}`] = false;
+  if (loaded) return window.fbq?.("consent", "grant");
   loaded = true;
   if (ANALYTICS.ga4) {
     addScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ANALYTICS.ga4)}`);
@@ -38,14 +39,17 @@ function loadAnalytics() {
       window.dataLayer.push(arguments);
     };
     window.gtag("js", new Date());
-    window.gtag("config", ANALYTICS.ga4, { anonymize_ip: true });
+    // o GA4 já descarta o IP; sem Google Ads, nada de sinais de anúncio
+    window.gtag("config", ANALYTICS.ga4, { allow_google_signals: false, allow_ad_personalization_signals: false });
   }
   if (ANALYTICS.metaPixel) {
-    const q = [];
+    // igual ao snippet oficial: enfileira até o fbevents.js chegar e definir callMethod
     window.fbq = function fbq(...args) {
-      q.push(args);
+      if (window.fbq.callMethod) window.fbq.callMethod(...args);
+      else window.fbq.queue.push(args);
     };
-    window.fbq.queue = q;
+    window.fbq.push = window.fbq;
+    window.fbq.queue = [];
     window.fbq.loaded = true;
     window.fbq.version = "2.0";
     window._fbq = window.fbq;
@@ -53,6 +57,13 @@ function loadAnalytics() {
     window.fbq("init", ANALYTICS.metaPixel);
     window.fbq("track", "PageView");
   }
+}
+
+/** Recusa depois de ter aceitado: para de medir já, sem esperar recarregar a página. */
+function stopAnalytics() {
+  if (!loaded) return;
+  if (ANALYTICS.ga4) window[`ga-disable-${ANALYTICS.ga4}`] = true;
+  window.fbq?.("consent", "revoke");
 }
 
 function showBanner() {
@@ -71,6 +82,7 @@ export function initConsent() {
     saveChoice(b.dataset.consent);
     el.hidden = true;
     if (b.dataset.consent === "yes") loadAnalytics();
+    else stopAnalytics();
   });
   document.querySelectorAll("[data-open-consent]").forEach((a) => {
     a.hidden = false;

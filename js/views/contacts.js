@@ -37,7 +37,7 @@ export function renderContacts() {
 
 export function bindContacts() {
   $("#waitlist-ctas").addEventListener("click", (e) => {
-    if (e.target.closest("a")) track("waitlist_click");
+    if (e.target.closest("a")) track("contact", { source: "waitlist" });
   });
   // links data-wa criados depois (ex.: "Consultar" tamanho no painel)
   document.addEventListener("click", (e) => {
@@ -45,7 +45,7 @@ export function bindContacts() {
     const link = a && whatsappLink(CONTACT.whatsapp, a.dataset.wa);
     if (!link) return;
     e.preventDefault();
-    track("whatsapp_click", { source: "link" });
+    track("contact", { source: "whatsapp" });
     window.open(link, "_blank", "noopener");
   });
 }

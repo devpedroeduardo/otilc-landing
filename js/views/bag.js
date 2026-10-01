@@ -60,7 +60,7 @@ function copyMessage() {
     ta.select();
     toast("Mensagem selecionada. Copie com Ctrl+C ou segure para copiar.");
   };
-  track("copy_message", { items: state.selection.size });
+  track("begin_checkout", { products: selectedProducts(), method: "copy_message" });
   try {
     navigator.clipboard.writeText(message()).then(() => toast("Mensagem copiada"), fallback);
   } catch {
@@ -90,8 +90,7 @@ export function bindBag() {
     if (t) return toggleSelection(t.dataset.toggle);
     if (e.target.closest("#copy-msg")) copyMessage();
     if (e.target.closest("#send-wa")) {
-      const items = selectedProducts();
-      track("whatsapp_click", { source: "bag", items: items.length, value: totalOf(items), currency: "BRL" });
+      track("begin_checkout", { products: selectedProducts(), method: "whatsapp" });
     }
   });
 }

@@ -85,7 +85,7 @@ export function openDetail(no, from) {
   renderDetail(no);
   setHash(`peca-${no}`);
   showLayer("detail");
-  track("view_item", { item_id: p.no, item_name: p.name, value: p.price, currency: "BRL" });
+  track("view_item", { products: [p] });
 }
 
 /** Abre (ou fecha) o painel conforme o hash #peca-NN. */
@@ -102,7 +102,7 @@ export function syncWithHash() {
 async function sharePiece(no) {
   const p = findProduct(no);
   const url = pieceUrl(no);
-  track("share", { item_id: no });
+  track("share", { products: [p], method: navigator.share ? "native" : "copy_link" });
   if (navigator.share) {
     try {
       await navigator.share({

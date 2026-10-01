@@ -1,11 +1,20 @@
+import { platformEvents } from "./lib/analytics.js";
+import { state } from "./state.js";
+
 /** @param {string} s @param {ParentNode} [root] @returns {HTMLElement} */
 export const $ = (s, root = document) => root.querySelector(s);
 
-/** Envia um evento para GA4 e/ou Meta Pixel, se estiverem instalados. */
-export function track(name, params = {}) {
+/**
+ * Envia um evento para GA4 e/ou Meta Pixel, se estiverem carregados (só depois do consentimento).
+ * @param {string} event ver platformEvents em js/lib/analytics.js
+ * @param {import("./lib/analytics.js").EventData} [data]
+ */
+export function track(event, data = {}) {
+  if (!window.gtag && !window.fbq) return;
   try {
-    if (window.gtag) window.gtag("event", name, params);
-    if (window.fbq) window.fbq("trackCustom", name, params);
+    const { ga4, meta } = platformEvents(event, { categories: state.categories, ...data });
+    if (ga4 && window.gtag) window.gtag("event", ...ga4);
+    if (meta && window.fbq) window.fbq(...meta);
   } catch {
     /* métricas nunca podem quebrar a página */
   }

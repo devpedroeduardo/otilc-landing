@@ -9,12 +9,13 @@ export function toggleSelection(no) {
   if (state.selection.has(no)) {
     state.selection.delete(no);
     toast(`${p.name} saiu da seleção`);
+    track("remove_from_cart", { products: [p] });
   } else if (!isAvailable(p)) {
     return;
   } else {
     state.selection.add(no);
     toast(`${p.name} na seleção`);
-    track("add_to_selection", { item_id: p.no, item_name: p.name, value: p.price, currency: "BRL" });
+    track("add_to_cart", { products: [p] });
   }
   saveSelection();
   emit("selection");
