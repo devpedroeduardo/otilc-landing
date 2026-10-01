@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://SEU-DOMINIO.com.br/sitemap.xml
+Sitemap: https://pedroedu77.github.io/otilc-landing/sitemap.xml
