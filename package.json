@@ -2,7 +2,7 @@
   "name": "otilc-landing",
   "version": "1.0.0",
   "private": true,
-  "description": "Vitrine da prÃ©-venda OTILC (Drop 00): site estÃ¡tico, sem build, em HTML, CSS e JavaScript modular.",
+  "description": "Vitrine da prÃƒÂ©-venda OTILC (Drop 00): site estÃƒÂ¡tico, sem build, em HTML, CSS e JavaScript modular.",
   "type": "module",
   "license": "SEE LICENSE IN LICENSE",
   "engines": {
@@ -14,14 +14,16 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:unit": "node --test tests/unit/",
+    "test:unit": "node --test \"tests/unit/*.test.js\"",
     "test:e2e": "playwright test",
     "test": "npm run test:unit && npm run test:e2e",
     "lighthouse": "lhci autorun",
     "check": "npm run format:check && npm run lint && npm test"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
     "eslint": "^10.11.0",
     "globals": "^17.13.0",
     "prettier": "^3.9.9",
