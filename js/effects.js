@@ -43,11 +43,12 @@ export function startEye() {
   wander();
 }
 
-/** Faixa corrida abaixo do hero. @param {number} count @param {string} drop */
-export function renderTicker(count, drop) {
+/** Faixa corrida abaixo do hero. @param {number} count */
+export function renderTicker(count) {
   const star = `<img src="assets/star.webp" alt="" width="200" height="322">`;
-  const chunk = [`Pré-venda <i>aberta</i>`, `Drop ${drop}`, `Uma de cada`, `Veja <i>além</i>`, `${count} peças`]
+  const chunk = [`Pré-venda <i>aberta</i>`, `Não evite <i>focar</i>`, `${count} peças`]
     .map((t) => `<span>${t} ${star}</span>`)
     .join("");
-  $("#ticker-row").innerHTML = chunk.repeat(4);
+  // número par de cópias: a animação anda 50% e emenda sem salto; 8 cobrem telas de até ~2400px
+  $("#ticker-row").innerHTML = chunk.repeat(8);
 }

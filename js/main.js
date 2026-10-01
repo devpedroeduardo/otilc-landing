@@ -51,7 +51,7 @@ async function boot() {
 
   loadSelection();
   $("#fact-count").textContent = state.products.length;
-  renderTicker(state.products.length, state.drop);
+  renderTicker(state.products.length);
   updateCount(false);
 
   const hash = location.hash.slice(1);

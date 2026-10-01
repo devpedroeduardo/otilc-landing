@@ -417,7 +417,7 @@ body::after {
 .ticker .row {
   display: flex;
   width: max-content;
-  animation: run 38s linear infinite;
+  animation: run 50s linear infinite;
 }
 .ticker span {
   display: flex;
