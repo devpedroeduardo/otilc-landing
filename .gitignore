@@ -1,0 +1,19 @@
+# dependências e saídas de ferramentas
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+.lighthouseci/
+coverage/
+
+# editor / sistema
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# variáveis locais
+.env
+.env.*
